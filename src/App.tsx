@@ -175,7 +175,7 @@ function MenuPage() {
       exit="out"
       variants={pageTransition}
       transition={{ duration: 0.5 }}
-      className=\"min-h-screen bg-secondary/60 wood-grain-texture\"
+      className="min-h-screen bg-secondary/60 wood-grain-texture"
     >
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
