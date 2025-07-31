@@ -244,7 +244,7 @@ function MenuPage() {
       transition={pageTransition}
       className="pt-16 min-h-screen"
     >
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/20">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/95 wood-grain-texture">
         <div className="max-w-7xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -252,10 +252,10 @@ function MenuPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">
+            <h2 className="font-display font-bold text-4xl md:text-5xl text-secondary-foreground mb-4">
               Smoky Slider Menu
             </h2>
-            <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
+            <p className="text-lg text-secondary-foreground/90 max-w-2xl mx-auto">
               Hand-crafted sliders made with love, smoke, and the finest ingredients. 
               Every bite tells a story of authentic barbecue tradition.
             </p>
