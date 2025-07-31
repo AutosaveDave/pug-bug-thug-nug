@@ -137,7 +137,7 @@ function HomePage({ setCurrentPage }: { setCurrentPage: (page: PageType) => void
             OldManRodjas
           </motion.h1>
           <motion.h2 
-            className="font-display font-bold text-5xl md:text-6xl text-primary-foreground mb-2"
+            className="font-display font-bold text-5xl md:text-6xl text-primary-foreground mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
