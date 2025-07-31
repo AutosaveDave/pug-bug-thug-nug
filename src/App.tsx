@@ -180,6 +180,8 @@ function HomePage({ setCurrentPage }: { setCurrentPage: (page: PageType) => void
                 />
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, 0] }}
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: 0 }}
                   transition={{ duration: 0.5 }}
                   className="flex items-center relative z-10"
                 >
