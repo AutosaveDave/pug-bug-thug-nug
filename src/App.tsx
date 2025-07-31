@@ -271,7 +271,7 @@ function MenuPage() {
                 whileHover={{ scale: 1.02, y: -5 }}
                 className="group"
               >
-                <Card className="h-full hover:shadow-xl transition-all duration-300 wood-grain-light relative overflow-hidden border-2 border-border/20 hover:border-accent/50">
+                <Card className="h-full hover:shadow-xl transition-all duration-300 wood-grain-light relative overflow-hidden border-2 border-border/20 hover:border-red-500">
                   <div className="absolute inset-0 bg-card/95"></div>
                   <div className="relative z-10">
                     <CardHeader>
