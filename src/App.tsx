@@ -280,7 +280,7 @@ function MenuPage() {
                           {item.name}
                         </CardTitle>
                         <div className="flex flex-col items-end gap-2">
-                          <span className="text-2xl font-bold text-accent">{item.price}</span>
+                          <span className="text-2xl font-bold text-primary">{item.price}</span>
                           <div className="flex gap-2">
                             {item.isNew && <Badge variant="secondary" className="bg-accent text-accent-foreground font-medium">New</Badge>}
                             {item.isPopular && <Badge variant="outline" className="border-primary text-primary font-medium">Popular</Badge>}
