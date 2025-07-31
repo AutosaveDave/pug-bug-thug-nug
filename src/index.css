@@ -290,3 +290,17 @@
 .button-hover-bounce:hover {
   animation: button-bounce 0.6s ease-in-out;
 }
+
+/* Menu card hover enhancements */
+.menu-card-hover {
+  transform-origin: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px -12px oklch(0.40 0.15 25 / 0.25),
+    0 8px 16px -4px oklch(0.30 0.04 250 / 0.15),
+    0 0 0 1px oklch(0.85 0.15 85 / 0.1);
+}

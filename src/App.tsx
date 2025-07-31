@@ -268,10 +268,14 @@ function MenuPage() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ scale: 1.02, y: -5 }}
+                whileHover={{ 
+                  scale: 1.03, 
+                  y: -8,
+                  transition: { type: "spring", stiffness: 300, damping: 25 }
+                }}
                 className="group"
               >
-                <Card className="h-full hover:shadow-xl transition-all duration-300 wood-grain-light relative overflow-hidden border-2 border-border/20 hover:border-red-500">
+                <Card className="h-full hover:shadow-xl transition-all duration-300 wood-grain-light relative overflow-hidden border-2 border-border/20 hover:border-red-500 hover:shadow-2xl hover:shadow-primary/20">
                   <div className="absolute inset-0 bg-card/95"></div>
                   <div className="relative z-10">
                     <CardHeader>
