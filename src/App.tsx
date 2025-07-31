@@ -1,21 +1,19 @@
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { MapPin, Clock, Star, Users, Phone, Instagram, ArrowRight, ChefHat, Heart } from "@phosphor-icons/react"
-import { Button } from "@/components/ui/button"
+import { MapPin, Clock, Star, Users, Phone, Ins
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
-
 interface MenuItem {
-  id: string
-  name: string
-  description: string
-  price: string
-  isNew?: boolean
-  isPopular?: boolean
-}
 
-const menuItems: MenuItem[] = [
+  price: string
+  id: string
+
+  {
+    name: "Clas
+    price: "$6.50
+  },
+ 
+
+    isNew: true
   {
     id: "classic-bbq",
     name: "Classic BBQ Slider",
@@ -34,580 +32,278 @@ const menuItems: MenuItem[] = [
     id: "spicy-chicken",
     name: "Spicy Chicken Stack",
     description: "Nashville hot chicken with jalapeño slaw and ranch drizzle",
-    price: "$6.75"
+  type: "tween",
   },
-  {
-    id: "boomer-bomb",
-    name: "Boomer Bomb Mk. IV", 
-    description: "House-smoked pulled pork with creamy queso and fresh jalapeños",
-    price: "$7.75"
+
+    id: "veggie-delight",
+      initial={{ y: -100 }}
+    description: "Grilled portobello with roasted peppers, hummus, and balsamic glaze",
+    >
   },
-  {
+   
     id: "triple-threat",
     name: "The Triple Threat",
     description: "Pulled pork, brisket, and chicken with our signature sauce trio",
     price: "$9.25",
     isPopular: true
-  },
+    
   {
-    id: "mac-attack",
+              >
     name: "Mac & Cheese Attack",
-    description: "Creamy mac and cheese with pulled pork and crispy bacon bits",
+          </div>
     price: "$7.25"
-  }
+  )
 ]
 
-type PageType = 'home' | 'menu' | 'bite-club' | 'location' | 'contact'
-
-const pageVariants = {
-  initial: { opacity: 0, x: 100 },
-  in: { opacity: 1, x: 0 },
-  out: { opacity: 0, x: -100 }
-}
-
-const pageTransition = {
-  type: "tween",
-  ease: "anticipate",
-  duration: 0.5
-}
-
-function Navigation({ currentPage, setCurrentPage }: { currentPage: PageType, setCurrentPage: (page: PageType) => void }) {
+function App() {
   return (
-    <motion.nav 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50 wood-grain-nav"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <motion.div 
-            whileHover={{ scale: 1.05 }}
-            className="font-display font-bold text-xl text-primary cursor-pointer"
-            onClick={() => setCurrentPage('home')}
-          >
-            OldManRodjas
-          </motion.div>
-          <div className="hidden md:flex space-x-8">
-            {(['home', 'menu', 'bite-club', 'location', 'contact'] as PageType[]).map((page) => (
-              <motion.button
-                key={page}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setCurrentPage(page)}
-                className={`text-foreground hover:text-accent transition-colors capitalize ${
-                  currentPage === page ? 'text-accent font-semibold' : ''
-                }`}
-              >
-                {page === 'bite-club' ? 'Bite Club' : page}
-              </motion.button>
-            ))}
-          </div>
-        </div>
-      </div>
-    </motion.nav>
-  )
-}
-
-function HomePage({ setCurrentPage }: { setCurrentPage: (page: PageType) => void }) {
-  return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-      className="min-h-screen"
-    >
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 smoke-effect"></div>
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
+    <div className="min-h-screen bg-background font-body">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50 wood-grain-nav">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
           className="relative z-10 text-center px-4 sm:px-6 lg:px-8"
-        >
           <motion.h1 
-            className="font-display font-bold text-6xl md:text-8xl text-primary-foreground mb-4 animate-float"
-            initial={{ scale: 0.8 }}
-            animate={{ scale: 1 }}
+            </div>
             transition={{ duration: 0.8, delay: 0.5 }}
-          >
             OldManRodjas
-          </motion.h1>
           <motion.h2 
-            className="font-display font-bold text-5xl md:text-6xl text-primary-foreground mb-6"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-          >
-            Slider Shack
-          </motion.h2>
-          <motion.p 
-            className="text-xl md:text-2xl text-primary-foreground/90 mb-8 font-medium"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-          >
-            Meet Meat
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2 }}
-          >
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            >
-              <Button 
-                size="lg" 
-                onClick={() => setCurrentPage('menu')}
-                className="bg-accent hover:bg-accent/80 text-accent-foreground text-lg px-8 py-6 animate-pulse-glow group relative overflow-hidden border-2 border-accent-foreground/20 hover:border-accent-foreground/40 shadow-2xl hover:shadow-accent/30 transition-all duration-300"
-              >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-accent-foreground/10 to-transparent"
-                  initial={{ x: "-100%" }}
-                  animate={{ x: "100%" }}
-                  transition={{ 
-                    repeat: Infinity, 
-                    duration: 2.5, 
-                    ease: "linear",
-                    repeatDelay: 1
-                  }}
-                />
-                <motion.div
-                  whileHover={{ rotate: [0, -10, 10, 0] }}
-                  initial={{ rotate: 0 }}
-                  animate={{ rotate: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="flex items-center relative z-10"
-                >
-                  <ChefHat size={24} className="mr-2 group-hover:scale-110 transition-transform duration-300" />
-                  <span className="font-semibold group-hover:tracking-wide transition-all duration-300">View Menu</span>
-                  <motion.div
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <ArrowRight size={20} className="ml-2 group-hover:scale-125 transition-transform duration-300" />
-                  </motion.div>
-                </motion.div>
-              </Button>
-            </motion.div>
-          </motion.div>
-        </motion.div>
-      </section>
-
-      {/* Quick Features */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/20">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          >
-            {[
-              { icon: ChefHat, title: "Hand-Crafted", desc: "Every slider made fresh to order", delay: 0.1 },
-              { icon: Heart, title: "Local Favorite", desc: "Austin's most beloved food truck", delay: 0.3 },
-              { icon: Star, title: "Award Winning", desc: "Best BBQ sliders 3 years running", delay: 0.5 }
-            ].map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: feature.delay, duration: 0.6 }}
-                whileHover={{ scale: 1.05 }}
-                className="text-center p-6 bg-card rounded-lg wood-grain-light hover:shadow-lg transition-all duration-300"
-              >
-                <feature.icon size={48} className="mx-auto mb-4 text-accent" />
-                <h3 className="font-display text-xl font-bold text-primary mb-2">{feature.title}</h3>
-                <p className="text-foreground/70">{feature.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+            </div>
+          <motio
         </div>
-      </section>
-    </motion.div>
-  )
-}
+            
 
-function MenuPage() {
-  return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-      className="pt-16 min-h-screen"
-    >
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/95 wood-grain-texture">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+          <motion.div
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
           >
-            <h2 className="font-display font-bold text-4xl md:text-5xl text-secondary-foreground mb-4">
-              Smoky Slider Menu
-            </h2>
-            <p className="text-lg text-secondary-foreground/90 max-w-2xl mx-auto">
-              Hand-crafted sliders made with love, smoke, and the finest ingredients. 
-              Every bite tells a story of authentic barbecue tradition.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {menuItems.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ 
-                  scale: 1.03, 
-                  y: -8,
-                  transition: { type: "spring", stiffness: 300, damping: 25 }
-                }}
-                className="group"
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              <Button 
+               
               >
-                <Card className="h-full hover:shadow-xl transition-all duration-300 wood-grain-light relative overflow-hidden border-2 border-border/20 hover:border-red-500 hover:shadow-2xl hover:shadow-primary/20">
-                  <div className="absolute inset-0 bg-card/95"></div>
-                  <div className="relative z-10">
-                    <CardHeader>
-                      <div className="flex justify-between items-start">
-                        <CardTitle className="text-xl font-semibold text-primary group-hover:text-red-500 transition-colors">
-                          {item.name}
-                        </CardTitle>
-                        <div className="flex flex-col items-end gap-2">
-                          <span className="text-2xl font-bold text-primary">{item.price}</span>
-                          <div className="flex gap-2">
-                            {item.isNew && <Badge variant="secondary" className="bg-accent text-accent-foreground font-medium">New</Badge>}
-                            {item.isPopular && <Badge variant="outline" className="border-primary text-primary font-medium">Popular</Badge>}
-                          </div>
-                        </div>
+                  classN
+               
+                    repeat: Infinity, 
+                    e
+              
+                <m
+                  init
+                  transition={{ duration: 0.5 }}
+           
+                  <sp
+                   
+              
+                
+
+          </motion.div>
+      </section>
+      {/* Quick Features */}
+        <div className="max-w-7xl mx-auto">
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ durat
+          >
+              { icon: ChefHat, title: "Hand-Crafted", desc: "Every slider m
+              { icon: Star, title: "Award Winning", desc: "Best BBQ sliders 3 years ru
+              <motion.div
+                
+                
+
+                <feature.icon size={48} className="mx-auto mb-4 text-accent" />
+                <p className="text-for
+            ))}
+        </div>
+    </motion.div>
+}
+function MenuPage() {
+    <motion.div
+      animate="in"
+                      <span className="text-2xl font-bold text-accent">{item.price}</span>
+                      <div className="flex gap-2">
+                        {item.isNew && <Badge variant="secondary" className="bg-accent text-accent-foreground">New</Badge>}
+                        {item.isPopular && <Badge variant="outline" className="border-primary text-primary">Popular</Badge>}
                       </div>
-                      <CardDescription className="text-foreground/70 leading-relaxed">
-                        {item.description}
-                      </CardDescription>
-                    </CardHeader>
+                    </div>
                   </div>
-                </Card>
-              </motion.div>
+                  <CardDescription className="text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
             ))}
           </div>
         </div>
       </section>
-    </motion.div>
-  )
-}
 
-function BiteClubPage() {
-  return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-      className="pt-16 min-h-screen"
-    >
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
+      <Separator className="my-8" />
+
+      {/* Bite Club Section */}
+      <section id="bite-club" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
-          >
+          <div className="mb-12">
             <h2 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">
               Join the Bite Club
             </h2>
             <p className="text-xl text-accent font-medium mb-2">
               First rule of Bite Club: Tell everyone
             </p>
-            <p className="text-lg text-foreground/70">
+            <p className="text-lg text-muted-foreground">
               Our exclusive rewards program for serious slider enthusiasts
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-          >
-            <Card className="bg-gradient-to-br from-primary via-primary to-secondary text-primary-foreground p-8 wood-grain-texture relative overflow-hidden border-2 border-accent/30">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/98 to-secondary/98"></div>
-              <CardContent className="space-y-6 relative z-10">
-                <motion.div 
-                  className="flex justify-center"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <div className="bg-accent p-4 rounded-full shadow-lg">
-                    <Star size={48} weight="fill" className="text-accent-foreground" />
-                  </div>
-                </motion.div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                  {[
-                    { title: "Buy 5, Get 1 Free", desc: "Every 6th slider is on the house", delay: 0.1 },
-                    { title: "Exclusive Specials", desc: "Members-only menu items and deals", delay: 0.3 },
-                    { title: "Birthday Surprise", desc: "Free slider combo on your special day", delay: 0.5 }
-                  ].map((benefit) => (
-                    <motion.div
-                      key={benefit.title}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: benefit.delay, duration: 0.6 }}
-                    >
-                      <h3 className="font-bold text-2xl mb-2">{benefit.title}</h3>
-                      <p className="text-primary-foreground/90">{benefit.desc}</p>
-                    </motion.div>
-                  ))}
-                </div>
+          <Card className="bg-gradient-to-br from-primary to-secondary text-primary-foreground p-8">
+            <CardContent className="space-y-6">
+              <div className="flex justify-center">
+                <div className="bg-accent p-4 rounded-full">
+                  <Star size={48} weight="fill" />
+                      
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                  <h3 className="font-bold text-2xl mb-2">Buy 5, Get 1 Free</h3>
+                  <p className="text-primary-foreground/80">Every 6th slider is on the house</p>
+              Join the
+                <div>
+                  <h3 className="font-bold text-2xl mb-2">Exclusive Specials</h3>
+                  <p className="text-primary-foreground/80">Members-only menu items and deals</p>
+            initial={{
+                <div>
+                  <h3 className="font-bold text-2xl mb-2">Birthday Surprise</h3>
+                  <p className="text-primary-foreground/80">Free slider combo on your special day</p>
+                  clas
+              </div>
 
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button 
-                    size="lg" 
-                    variant="secondary" 
-                    className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 shadow-lg border-2 border-accent-foreground/20"
-                  >
-                    <Users size={24} className="mr-2" />
-                    Join Bite Club Today
-                  </Button>
-                </motion.div>
-              </CardContent>
-            </Card>
-          </motion.div>
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6"
+              >
+                <Users size={24} className="mr-2" />
+                Join Bite Club Today
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </section>
-    </motion.div>
-  )
-}
 
-function LocationPage() {
-  return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-      className="pt-16 min-h-screen"
-    >
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/15">
+      <Separator className="my-8" />
+
+      {/* Location & Hours */}
+      <section id="location" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">
               Find the Flavor
             </h2>
-            <p className="text-lg text-foreground/80">
+            <p className="text-lg text-muted-foreground">
               Follow the smoke and find us around town
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {[
-              {
-                icon: MapPin,
-                title: "Current Location",
-                content: (
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2 text-foreground">Downtown Food Truck Park</h3>
-                    <p className="text-foreground/70">
-                      123 Main Street<br />
-                      Austin, TX 78701
-                    </p>
-                    <div className="pt-4">
-                      <p className="text-sm text-foreground/60">
-                        Location updates daily on our social media
-                      </p>
-                    </div>
-                  </div>
-                ),
-                delay: 0.2
-              },
-              {
-                icon: Clock,
-                title: "Hours of Operation",
-                content: (
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="font-medium text-foreground">Monday - Friday</span>
-                      <span className="text-foreground/70">11:00 AM - 8:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-medium text-foreground">Saturday</span>
-                      <span className="text-foreground/70">10:00 AM - 9:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-medium text-foreground">Sunday</span>
-                      <span className="text-foreground/70">12:00 PM - 6:00 PM</span>
-                    </div>
-                    <div className="pt-4 border-t border-border/30">
-                      <p className="text-sm text-accent font-medium">
-                        Extended hours for special events
-                      </p>
-                    </div>
-                  </div>
-                ),
-                delay: 0.4
-              }
-            ].map((section) => (
-              <motion.div
-                key={section.title}
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: section.delay, duration: 0.6 }}
-                whileHover={{ scale: 1.02 }}
-              >
-                <Card className="p-8 wood-grain-light relative overflow-hidden border-2 border-border/20 hover:border-accent/30 transition-colors">
-                  <div className="absolute inset-0 bg-card/95"></div>
+            {/* Current Location */}
+            <Card className="p-8">
+              <CardHeader className="pb-6">
+                <CardTitle className="flex items-center text-2xl text-primary">
+                  <MapPin size={32} className="mr-3 text-accent" />
+                  Current Location
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Downtown Food Truck Park</h3>
+                  <p className="text-muted-foreground">
+                    123 Main Street<br />
+                    Austin, TX 78701
+                  </p>
+  return (
+                <div className="pt-4">
+                  <p className="text-sm text-muted-foreground">
+                    Location updates daily on our social media
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Hours */}
+            <Card className="p-8">
+              <CardHeader className="pb-6">
+                <CardTitle className="flex items-center text-2xl text-primary">
+                  <Clock size={32} className="mr-3 text-accent" />
+                  Hours of Operation
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
                   <div className="relative z-10">
-                    <CardHeader className="pb-6">
-                      <CardTitle className="flex items-center text-2xl text-primary">
-                        <section.icon size={32} className="mr-3 text-accent" />
-                        {section.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      {section.content}
-                    </CardContent>
+                  <span className="font-medium">Monday - Friday</span>
+                  <span className="text-muted-foreground">11:00 AM - 8:00 PM</span>
+                </div>
+                <div className="flex justify-between">
                   </div>
-                </Card>
               </motion.div>
-            ))}
           </div>
-        </div>
       </section>
-    </motion.div>
   )
-}
 
-function ContactPage() {
   return (
-    <motion.div
       initial="initial"
-      animate="in"
       exit="out"
-      variants={pageVariants}
       transition={pageTransition}
-      className="pt-16 min-h-screen"
     >
-      <section className="bg-primary text-primary-foreground py-20 wood-grain-texture relative min-h-screen flex items-center">
-        <div className="absolute inset-0 bg-primary/95"></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
+        <div className
           <motion.h2 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="font-display font-bold text-4xl md:text-5xl mb-12"
-          >
-            Get in Touch
-          </motion.h2>
+            animate
+            clas
+            Ge
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-            {[
-              {
+
                 icon: Phone,
-                title: "Call Us",
                 main: "(512) 555-MEAT",
-                sub: "For catering and large orders",
                 delay: 0.2
-              },
               {
-                icon: Instagram,
-                title: "Follow the Smoke",
-                main: "@OldManRodjasSliders",
-                sub: "Daily location updates & specials",
-                delay: 0.4
-              }
-            ].map((contact) => (
-              <motion.div
-                key={contact.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: contact.delay, duration: 0.6 }}
-                whileHover={{ scale: 1.05 }}
-                className="p-6 bg-primary-foreground/10 rounded-lg backdrop-blur-sm"
-              >
-                <h3 className="font-semibold text-xl mb-4 flex items-center justify-center">
-                  <contact.icon size={24} className="mr-2" />
-                  {contact.title}
-                </h3>
-                <p className="text-lg mb-2">{contact.main}</p>
-                <p className="text-primary-foreground/80 text-sm">
-                  {contact.sub}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
-          <Separator className="bg-primary-foreground/20 mb-8" />
+                title: "
+               
           
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
+              <motion.div
+                i
+                transition={{ delay: contact.delay, duration: 0.6 }}
+                className="p-6 bg-primary-foreground
+                <h3 cla
+                  {
+                <p className="text-lg mb-2">{contact.ma
+                  {contact.sub}
+              </motion.div>
+          </div>
+          <Separat
+          <m
+            anima
             className="flex flex-col md:flex-row justify-between items-center"
-          >
-            <div className="font-display font-bold text-2xl mb-4 md:mb-0">
-              OldManRodjas Slider Shack
+            <div className="font-display font-bold text-
             </div>
-            <div className="text-primary-foreground/80">
-              © 2024 - Meet Meat, Eat Heat
-            </div>
+              © 202
           </motion.div>
-        </div>
       </section>
-    </motion.div>
   )
-}
 
-function App() {
-  const [currentPage, setCurrentPage] = useState<PageType>('home')
+  const [currentPa
+  const renderPa
 
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <HomePage setCurrentPage={setCurrentPage} />
       case 'menu':
-        return <MenuPage />
-      case 'bite-club':
-        return <BiteClubPage />
+      case
       case 'location':
-        return <LocationPage />
       case 'contact':
-        return <ContactPage />
       default:
-        return <HomePage setCurrentPage={setCurrentPage} />
     }
-  }
 
-  return (
-    <div className="min-h-screen bg-background font-body overflow-x-hidden">
-      <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
+    <div className="min-h-screen bg-backgr
       
-      <AnimatePresence mode="wait">
-        <motion.div key={currentPage}>
-          {renderPage()}
-        </motion.div>
-      </AnimatePresence>
+        <motion.
+        </moti
     </div>
-  )
 }
+exp
 
-export default App
+
