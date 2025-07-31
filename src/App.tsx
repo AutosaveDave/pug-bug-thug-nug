@@ -482,7 +482,7 @@ function App() {
                   className={`font-medium transition-colors ${
                     currentPage === item.key
                       ? 'text-accent'
-                      : 'text-foreground hover:text-accent'
+                      : 'text-foreground hover:text-red-600'
                   }`}
                 >
                   {item.name}
