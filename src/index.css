@@ -8,43 +8,43 @@
 }
 
 :root {
-  /* #F5F5DC - Beige background */
-  --background: oklch(0.95 0.03 85);
-  /* #8B4513 - Saddle Brown foreground */
+  /* #D2B48C - Tan background for warmth */
+  --background: oklch(0.75 0.05 75);
+  /* #8B4513 - Saddle Brown foreground for strong contrast */
   --foreground: oklch(0.35 0.08 45);
 
-  /* #D2B48C - Tan card background */
-  --card: oklch(0.75 0.05 75);
+  /* #F5F5DC - Beige card background for contrast against tan */
+  --card: oklch(0.95 0.03 85);
   /* #8B4513 - Saddle Brown card text */
   --card-foreground: oklch(0.35 0.08 45);
-  --popover: oklch(0.75 0.05 75);
+  --popover: oklch(0.95 0.03 85);
   --popover-foreground: oklch(0.35 0.08 45);
 
-  /* #8B4513 - Saddle Brown primary */
-  --primary: oklch(0.35 0.08 45);
-  /* #F5F5DC - Beige on primary */
+  /* #A52A2A - Brown primary for rich, premium feel */
+  --primary: oklch(0.40 0.15 25);
+  /* #F5F5DC - Beige on primary for readability */
   --primary-foreground: oklch(0.95 0.03 85);
-  /* #A52A2A - Brown secondary */
-  --secondary: oklch(0.40 0.15 25);
+  /* #8B4513 - Saddle Brown secondary */
+  --secondary: oklch(0.35 0.08 45);
   /* #F5F5DC - Beige on secondary */
   --secondary-foreground: oklch(0.95 0.03 85);
-  /* #808080 - Gray muted */
+  /* #808080 - Gray muted for subtle backgrounds */
   --muted: oklch(0.58 0.01 270);
-  /* #8B4513 - Saddle Brown muted text */
-  --muted-foreground: oklch(0.35 0.08 45);
-  /* #FFD700 - Gold accent */
+  /* #FFFFFF - White muted text for better contrast on gray */
+  --muted-foreground: oklch(1 0 0);
+  /* #FFD700 - Gold accent for call-to-action elements */
   --accent: oklch(0.85 0.15 85);
-  /* #8B4513 - Saddle Brown on accent */
+  /* #8B4513 - Saddle Brown on accent for contrast */
   --accent-foreground: oklch(0.35 0.08 45);
   /* #A52A2A - Brown destructive */
   --destructive: oklch(0.40 0.15 25);
   /* #FFFFFF - White on destructive */
   --destructive-foreground: oklch(1 0 0);
 
-  /* #808080 - Gray borders */
-  --border: oklch(0.58 0.01 270);
-  --input: oklch(0.58 0.01 270);
-  /* #4169E1 - Royal Blue ring */
+  /* #8B4513 - Saddle Brown borders for definition */
+  --border: oklch(0.35 0.08 45);
+  --input: oklch(0.35 0.08 45);
+  /* #4169E1 - Royal Blue ring for focus states */
   --ring: oklch(0.55 0.25 260);
 
   --radius: 0.75rem;
@@ -91,9 +91,10 @@
 /* Smoke effect for hero */
 .smoke-effect {
   background: linear-gradient(135deg, 
-    oklch(0.35 0.08 45 / 0.8),  /* Saddle Brown */
-    oklch(0.40 0.15 25 / 0.6),  /* Brown */
-    oklch(0.85 0.15 85 / 0.4)   /* Gold */
+    oklch(0.40 0.15 25 / 0.9),  /* Rich Brown primary */
+    oklch(0.35 0.08 45 / 0.7),  /* Saddle Brown */
+    oklch(0.30 0.06 30 / 0.8),  /* Darker brown */
+    oklch(0.85 0.15 85 / 0.3)   /* Gold accent fade */
   );
 }
 

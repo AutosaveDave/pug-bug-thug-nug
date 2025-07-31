@@ -98,13 +98,13 @@ function App() {
       </section>
 
       {/* Menu Section */}
-      <section id="menu" className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="menu" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">
               Smoky Slider Menu
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               Hand-crafted sliders made with love, smoke, and the finest ingredients. 
               Every bite tells a story of authentic barbecue tradition.
             </p>
@@ -112,8 +112,8 @@ function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {menuItems.map((item) => (
-              <Card key={item.id} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 wood-grain-light relative overflow-hidden">
-                <div className="absolute inset-0 bg-card/90"></div>
+              <Card key={item.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 wood-grain-light relative overflow-hidden border-2 border-border/20 hover:border-accent/50">
+                <div className="absolute inset-0 bg-card/95"></div>
                 <div className="relative z-10">
                   <CardHeader>
                     <div className="flex justify-between items-start">
@@ -123,12 +123,12 @@ function App() {
                       <div className="flex flex-col items-end gap-2">
                         <span className="text-2xl font-bold text-accent">{item.price}</span>
                         <div className="flex gap-2">
-                          {item.isNew && <Badge variant="secondary" className="bg-accent text-accent-foreground">New</Badge>}
-                          {item.isPopular && <Badge variant="outline" className="border-primary text-primary">Popular</Badge>}
+                          {item.isNew && <Badge variant="secondary" className="bg-accent text-accent-foreground font-medium">New</Badge>}
+                          {item.isPopular && <Badge variant="outline" className="border-primary text-primary font-medium">Popular</Badge>}
                         </div>
                       </div>
                     </div>
-                    <CardDescription className="text-muted-foreground leading-relaxed">
+                    <CardDescription className="text-foreground/70 leading-relaxed">
                       {item.description}
                     </CardDescription>
                   </CardHeader>
@@ -142,7 +142,7 @@ function App() {
       <Separator className="my-8" />
 
       {/* Bite Club Section */}
-      <section id="bite-club" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section id="bite-club" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-12">
             <h2 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">
@@ -151,39 +151,39 @@ function App() {
             <p className="text-xl text-accent font-medium mb-2">
               First rule of Bite Club: Tell everyone
             </p>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-foreground/70">
               Our exclusive rewards program for serious slider enthusiasts
             </p>
           </div>
 
-          <Card className="bg-gradient-to-br from-primary to-secondary text-primary-foreground p-8 wood-grain-texture relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/95 to-secondary/95"></div>
+          <Card className="bg-gradient-to-br from-primary via-primary to-secondary text-primary-foreground p-8 wood-grain-texture relative overflow-hidden border-2 border-accent/30">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/98 to-secondary/98"></div>
             <CardContent className="space-y-6 relative z-10">
               <div className="flex justify-center">
-                <div className="bg-accent p-4 rounded-full">
-                  <Star size={48} weight="fill" />
+                <div className="bg-accent p-4 rounded-full shadow-lg">
+                  <Star size={48} weight="fill" className="text-accent-foreground" />
                 </div>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div>
                   <h3 className="font-bold text-2xl mb-2">Buy 5, Get 1 Free</h3>
-                  <p className="text-primary-foreground/80">Every 6th slider is on the house</p>
+                  <p className="text-primary-foreground/90">Every 6th slider is on the house</p>
                 </div>
                 <div>
                   <h3 className="font-bold text-2xl mb-2">Exclusive Specials</h3>
-                  <p className="text-primary-foreground/80">Members-only menu items and deals</p>
+                  <p className="text-primary-foreground/90">Members-only menu items and deals</p>
                 </div>
                 <div>
                   <h3 className="font-bold text-2xl mb-2">Birthday Surprise</h3>
-                  <p className="text-primary-foreground/80">Free slider combo on your special day</p>
+                  <p className="text-primary-foreground/90">Free slider combo on your special day</p>
                 </div>
               </div>
 
               <Button 
                 size="lg" 
                 variant="secondary" 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 shadow-lg border-2 border-accent-foreground/20"
               >
                 <Users size={24} className="mr-2" />
                 Join Bite Club Today
@@ -196,21 +196,21 @@ function App() {
       <Separator className="my-8" />
 
       {/* Location & Hours */}
-      <section id="location" className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="location" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/15">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl md:text-5xl text-primary mb-4">
               Find the Flavor
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-foreground/80">
               Follow the smoke and find us around town
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Current Location */}
-            <Card className="p-8 wood-grain-light relative overflow-hidden">
-              <div className="absolute inset-0 bg-card/90"></div>
+            <Card className="p-8 wood-grain-light relative overflow-hidden border-2 border-border/20 hover:border-accent/30 transition-colors">
+              <div className="absolute inset-0 bg-card/95"></div>
               <div className="relative z-10">
                 <CardHeader className="pb-6">
                   <CardTitle className="flex items-center text-2xl text-primary">
@@ -220,14 +220,14 @@ function App() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Downtown Food Truck Park</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="font-semibold text-lg mb-2 text-foreground">Downtown Food Truck Park</h3>
+                    <p className="text-foreground/70">
                       123 Main Street<br />
                       Austin, TX 78701
                     </p>
                   </div>
                   <div className="pt-4">
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-foreground/60">
                       Location updates daily on our social media
                     </p>
                   </div>
@@ -236,8 +236,8 @@ function App() {
             </Card>
 
             {/* Hours */}
-            <Card className="p-8 wood-grain-light relative overflow-hidden">
-              <div className="absolute inset-0 bg-card/90"></div>
+            <Card className="p-8 wood-grain-light relative overflow-hidden border-2 border-border/20 hover:border-accent/30 transition-colors">
+              <div className="absolute inset-0 bg-card/95"></div>
               <div className="relative z-10">
                 <CardHeader className="pb-6">
                   <CardTitle className="flex items-center text-2xl text-primary">
@@ -247,18 +247,18 @@ function App() {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="flex justify-between">
-                    <span className="font-medium">Monday - Friday</span>
-                    <span className="text-muted-foreground">11:00 AM - 8:00 PM</span>
+                    <span className="font-medium text-foreground">Monday - Friday</span>
+                    <span className="text-foreground/70">11:00 AM - 8:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="font-medium">Saturday</span>
-                    <span className="text-muted-foreground">10:00 AM - 9:00 PM</span>
+                    <span className="font-medium text-foreground">Saturday</span>
+                    <span className="text-foreground/70">10:00 AM - 9:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="font-medium">Sunday</span>
-                    <span className="text-muted-foreground">12:00 PM - 6:00 PM</span>
+                    <span className="font-medium text-foreground">Sunday</span>
+                    <span className="text-foreground/70">12:00 PM - 6:00 PM</span>
                   </div>
-                  <div className="pt-4 border-t border-border">
+                  <div className="pt-4 border-t border-border/30">
                     <p className="text-sm text-accent font-medium">
                       Extended hours for special events
                     </p>
