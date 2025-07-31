@@ -8,28 +8,44 @@
 }
 
 :root {
-  --background: oklch(0.96 0.01 85);
-  --foreground: oklch(0.25 0.02 270);
+  /* #F5F5DC - Beige background */
+  --background: oklch(0.95 0.03 85);
+  /* #8B4513 - Saddle Brown foreground */
+  --foreground: oklch(0.35 0.08 45);
 
-  --card: oklch(0.94 0.02 75);
-  --card-foreground: oklch(0.25 0.02 270);
-  --popover: oklch(0.94 0.02 75);
-  --popover-foreground: oklch(0.25 0.02 270);
+  /* #D2B48C - Tan card background */
+  --card: oklch(0.75 0.05 75);
+  /* #8B4513 - Saddle Brown card text */
+  --card-foreground: oklch(0.35 0.08 45);
+  --popover: oklch(0.75 0.05 75);
+  --popover-foreground: oklch(0.35 0.08 45);
 
-  --primary: oklch(0.25 0.02 270);
-  --primary-foreground: oklch(0.96 0.01 85);
-  --secondary: oklch(0.35 0.08 45);
-  --secondary-foreground: oklch(0.96 0.01 85);
-  --muted: oklch(0.88 0.02 75);
-  --muted-foreground: oklch(0.45 0.02 270);
-  --accent: oklch(0.55 0.18 25);
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
+  /* #8B4513 - Saddle Brown primary */
+  --primary: oklch(0.35 0.08 45);
+  /* #F5F5DC - Beige on primary */
+  --primary-foreground: oklch(0.95 0.03 85);
+  /* #A52A2A - Brown secondary */
+  --secondary: oklch(0.40 0.15 25);
+  /* #F5F5DC - Beige on secondary */
+  --secondary-foreground: oklch(0.95 0.03 85);
+  /* #808080 - Gray muted */
+  --muted: oklch(0.58 0.01 270);
+  /* #8B4513 - Saddle Brown muted text */
+  --muted-foreground: oklch(0.35 0.08 45);
+  /* #FFD700 - Gold accent */
+  --accent: oklch(0.85 0.15 85);
+  /* #8B4513 - Saddle Brown on accent */
+  --accent-foreground: oklch(0.35 0.08 45);
+  /* #A52A2A - Brown destructive */
+  --destructive: oklch(0.40 0.15 25);
+  /* #FFFFFF - White on destructive */
   --destructive-foreground: oklch(1 0 0);
 
-  --border: oklch(0.85 0.02 75);
-  --input: oklch(0.85 0.02 75);
-  --ring: oklch(0.55 0.18 25);
+  /* #808080 - Gray borders */
+  --border: oklch(0.58 0.01 270);
+  --input: oklch(0.58 0.01 270);
+  /* #4169E1 - Royal Blue ring */
+  --ring: oklch(0.55 0.25 260);
 
   --radius: 0.75rem;
 }
@@ -75,9 +91,9 @@
 /* Smoke effect for hero */
 .smoke-effect {
   background: linear-gradient(135deg, 
-    oklch(0.25 0.02 270 / 0.8), 
-    oklch(0.35 0.08 45 / 0.6),
-    oklch(0.55 0.18 25 / 0.4)
+    oklch(0.35 0.08 45 / 0.8),  /* Saddle Brown */
+    oklch(0.40 0.15 25 / 0.6),  /* Brown */
+    oklch(0.85 0.15 85 / 0.4)   /* Gold */
   );
 }
 
@@ -89,26 +105,26 @@
       90deg,
       transparent,
       transparent 2px,
-      oklch(0.15 0.02 45 / 0.3) 2px,
-      oklch(0.15 0.02 45 / 0.3) 4px
+      oklch(0.30 0.06 45 / 0.3) 2px,  /* Lighter saddle brown */
+      oklch(0.30 0.06 45 / 0.3) 4px
     ),
     /* Secondary grain detail */
     repeating-linear-gradient(
       180deg,
-      oklch(0.18 0.03 50 / 0.2) 0px,
-      oklch(0.22 0.03 40 / 0.1) 8px,
-      oklch(0.16 0.02 60 / 0.3) 16px,
-      oklch(0.20 0.03 45 / 0.15) 24px
+      oklch(0.32 0.07 50 / 0.2) 0px,  /* Saddle brown variations */
+      oklch(0.35 0.08 40 / 0.1) 8px,
+      oklch(0.28 0.06 60 / 0.3) 16px,
+      oklch(0.33 0.07 45 / 0.15) 24px
     ),
     /* Wood knot variations */
     radial-gradient(
       ellipse 40px 8px at 25% 30%,
-      oklch(0.12 0.04 30 / 0.4),
+      oklch(0.25 0.08 30 / 0.4),  /* Darker saddle brown */
       transparent
     ),
     radial-gradient(
       ellipse 35px 6px at 75% 70%,
-      oklch(0.14 0.03 35 / 0.3),
+      oklch(0.27 0.07 35 / 0.3),  /* Medium saddle brown */
       transparent
     );
   background-size: 100% 100%, 100% 32px, 200px 200px, 300px 300px;
@@ -122,14 +138,14 @@
       90deg,
       transparent,
       transparent 1px,
-      oklch(0.25 0.02 45 / 0.15) 1px,
-      oklch(0.25 0.02 45 / 0.15) 3px
+      oklch(0.40 0.06 45 / 0.15) 1px,  /* Light saddle brown */
+      oklch(0.40 0.06 45 / 0.15) 3px
     ),
     repeating-linear-gradient(
       180deg,
-      oklch(0.30 0.03 50 / 0.1) 0px,
-      oklch(0.35 0.03 40 / 0.05) 6px,
-      oklch(0.28 0.02 60 / 0.15) 12px
+      oklch(0.45 0.07 50 / 0.1) 0px,   /* Tan variations */
+      oklch(0.50 0.06 40 / 0.05) 6px,
+      oklch(0.42 0.06 60 / 0.15) 12px
     );
   background-size: 100% 100%, 100% 24px;
 }
@@ -141,14 +157,14 @@
       90deg,
       transparent,
       transparent 1px,
-      oklch(0.20 0.02 45 / 0.1) 1px,
-      oklch(0.20 0.02 45 / 0.1) 2px
+      oklch(0.38 0.06 45 / 0.1) 1px,   /* Very light saddle brown */
+      oklch(0.38 0.06 45 / 0.1) 2px
     ),
     linear-gradient(
       180deg,
-      oklch(0.25 0.03 50 / 0.05) 0%,
-      oklch(0.22 0.02 40 / 0.08) 50%,
-      oklch(0.20 0.02 60 / 0.05) 100%
+      oklch(0.40 0.07 50 / 0.05) 0%,   /* Gradient of saddle browns */
+      oklch(0.36 0.06 40 / 0.08) 50%,
+      oklch(0.34 0.06 60 / 0.05) 100%
     );
   background-size: 100% 100%, 100% 16px;
 }
