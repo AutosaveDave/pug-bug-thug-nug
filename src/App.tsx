@@ -469,7 +469,7 @@ function App() {
             <div className="font-display font-bold text-xl text-primary">
               OldManRodjas
             </div>
-            <div className="flex space-x-8">
+            <div className="flex space-x-2">
               {[
                 { name: 'Home', key: 'home' },
                 { name: 'Menu', key: 'menu' },
@@ -479,10 +479,10 @@ function App() {
                 <button
                   key={item.key}
                   onClick={() => setCurrentPage(item.key)}
-                  className={`font-medium transition-colors ${
+                  className={`font-medium transition-all duration-300 px-4 py-2 rounded-lg ${
                     currentPage === item.key
-                      ? 'text-accent'
-                      : 'text-foreground hover:text-red-600'
+                      ? 'bg-secondary text-secondary-foreground'
+                      : 'text-foreground hover:text-red-600 hover:bg-muted/50'
                   }`}
                 >
                   {item.name}
