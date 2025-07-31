@@ -37,10 +37,10 @@ const menuItems: MenuItem[] = [
     price: "$6.75"
   },
   {
-    id: "veggie-delight",
-    name: "Smoky Veggie Delight", 
-    description: "Grilled portobello with roasted peppers, hummus, and balsamic glaze",
-    price: "$5.75"
+    id: "boomer-bomb",
+    name: "Boomer Bomb Mk. IV", 
+    description: "House-smoked pulled pork with creamy queso and fresh jalapeños",
+    price: "$7.75"
   },
   {
     id: "triple-threat",
