@@ -167,6 +167,7 @@
       oklch(0.93 0.03 80 / 0.08) 50%,
       oklch(0.95 0.03 90 / 0.05) 100%
     );
+}
 /* Page transition animations */
 .page-enter {
   opacity: 0;
