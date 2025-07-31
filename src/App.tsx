@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="min-h-screen bg-background font-body">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
+      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50 wood-grain-nav">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="font-display font-bold text-xl text-primary">
@@ -112,24 +112,27 @@ function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {menuItems.map((item) => (
-              <Card key={item.id} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="text-xl font-semibold text-primary group-hover:text-accent transition-colors">
-                      {item.name}
-                    </CardTitle>
-                    <div className="flex flex-col items-end gap-2">
-                      <span className="text-2xl font-bold text-accent">{item.price}</span>
-                      <div className="flex gap-2">
-                        {item.isNew && <Badge variant="secondary" className="bg-accent text-accent-foreground">New</Badge>}
-                        {item.isPopular && <Badge variant="outline" className="border-primary text-primary">Popular</Badge>}
+              <Card key={item.id} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 wood-grain-light relative overflow-hidden">
+                <div className="absolute inset-0 bg-card/90"></div>
+                <div className="relative z-10">
+                  <CardHeader>
+                    <div className="flex justify-between items-start">
+                      <CardTitle className="text-xl font-semibold text-primary group-hover:text-accent transition-colors">
+                        {item.name}
+                      </CardTitle>
+                      <div className="flex flex-col items-end gap-2">
+                        <span className="text-2xl font-bold text-accent">{item.price}</span>
+                        <div className="flex gap-2">
+                          {item.isNew && <Badge variant="secondary" className="bg-accent text-accent-foreground">New</Badge>}
+                          {item.isPopular && <Badge variant="outline" className="border-primary text-primary">Popular</Badge>}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <CardDescription className="text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </CardDescription>
-                </CardHeader>
+                    <CardDescription className="text-muted-foreground leading-relaxed">
+                      {item.description}
+                    </CardDescription>
+                  </CardHeader>
+                </div>
               </Card>
             ))}
           </div>
@@ -153,8 +156,9 @@ function App() {
             </p>
           </div>
 
-          <Card className="bg-gradient-to-br from-primary to-secondary text-primary-foreground p-8">
-            <CardContent className="space-y-6">
+          <Card className="bg-gradient-to-br from-primary to-secondary text-primary-foreground p-8 wood-grain-texture relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/95 to-secondary/95"></div>
+            <CardContent className="space-y-6 relative z-10">
               <div className="flex justify-center">
                 <div className="bg-accent p-4 rounded-full">
                   <Star size={48} weight="fill" />
@@ -205,64 +209,71 @@ function App() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Current Location */}
-            <Card className="p-8">
-              <CardHeader className="pb-6">
-                <CardTitle className="flex items-center text-2xl text-primary">
-                  <MapPin size={32} className="mr-3 text-accent" />
-                  Current Location
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Downtown Food Truck Park</h3>
-                  <p className="text-muted-foreground">
-                    123 Main Street<br />
-                    Austin, TX 78701
-                  </p>
-                </div>
-                <div className="pt-4">
-                  <p className="text-sm text-muted-foreground">
-                    Location updates daily on our social media
-                  </p>
-                </div>
-              </CardContent>
+            <Card className="p-8 wood-grain-light relative overflow-hidden">
+              <div className="absolute inset-0 bg-card/90"></div>
+              <div className="relative z-10">
+                <CardHeader className="pb-6">
+                  <CardTitle className="flex items-center text-2xl text-primary">
+                    <MapPin size={32} className="mr-3 text-accent" />
+                    Current Location
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">Downtown Food Truck Park</h3>
+                    <p className="text-muted-foreground">
+                      123 Main Street<br />
+                      Austin, TX 78701
+                    </p>
+                  </div>
+                  <div className="pt-4">
+                    <p className="text-sm text-muted-foreground">
+                      Location updates daily on our social media
+                    </p>
+                  </div>
+                </CardContent>
+              </div>
             </Card>
 
             {/* Hours */}
-            <Card className="p-8">
-              <CardHeader className="pb-6">
-                <CardTitle className="flex items-center text-2xl text-primary">
-                  <Clock size={32} className="mr-3 text-accent" />
-                  Hours of Operation
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex justify-between">
-                  <span className="font-medium">Monday - Friday</span>
-                  <span className="text-muted-foreground">11:00 AM - 8:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="font-medium">Saturday</span>
-                  <span className="text-muted-foreground">10:00 AM - 9:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="font-medium">Sunday</span>
-                  <span className="text-muted-foreground">12:00 PM - 6:00 PM</span>
-                </div>
-                <div className="pt-4 border-t border-border">
-                  <p className="text-sm text-accent font-medium">
-                    Extended hours for special events
-                  </p>
-                </div>
-              </CardContent>
+            <Card className="p-8 wood-grain-light relative overflow-hidden">
+              <div className="absolute inset-0 bg-card/90"></div>
+              <div className="relative z-10">
+                <CardHeader className="pb-6">
+                  <CardTitle className="flex items-center text-2xl text-primary">
+                    <Clock size={32} className="mr-3 text-accent" />
+                    Hours of Operation
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="flex justify-between">
+                    <span className="font-medium">Monday - Friday</span>
+                    <span className="text-muted-foreground">11:00 AM - 8:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="font-medium">Saturday</span>
+                    <span className="text-muted-foreground">10:00 AM - 9:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="font-medium">Sunday</span>
+                    <span className="text-muted-foreground">12:00 PM - 6:00 PM</span>
+                  </div>
+                  <div className="pt-4 border-t border-border">
+                    <p className="text-sm text-accent font-medium">
+                      Extended hours for special events
+                    </p>
+                  </div>
+                </CardContent>
+              </div>
             </Card>
           </div>
         </div>
       </section>
 
       {/* Contact & Footer */}
-      <footer id="contact" className="bg-primary text-primary-foreground py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <footer id="contact" className="bg-primary text-primary-foreground py-16 wood-grain-texture relative">
+        <div className="absolute inset-0 bg-primary/95"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="font-display font-bold text-3xl mb-8">
             Get in Touch
           </h2>

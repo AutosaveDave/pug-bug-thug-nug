@@ -80,3 +80,75 @@
     oklch(0.55 0.18 25 / 0.4)
   );
 }
+
+/* Dark wood grain textures */
+.wood-grain-texture {
+  background-image: 
+    /* Primary wood grain pattern */
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      oklch(0.15 0.02 45 / 0.3) 2px,
+      oklch(0.15 0.02 45 / 0.3) 4px
+    ),
+    /* Secondary grain detail */
+    repeating-linear-gradient(
+      180deg,
+      oklch(0.18 0.03 50 / 0.2) 0px,
+      oklch(0.22 0.03 40 / 0.1) 8px,
+      oklch(0.16 0.02 60 / 0.3) 16px,
+      oklch(0.20 0.03 45 / 0.15) 24px
+    ),
+    /* Wood knot variations */
+    radial-gradient(
+      ellipse 40px 8px at 25% 30%,
+      oklch(0.12 0.04 30 / 0.4),
+      transparent
+    ),
+    radial-gradient(
+      ellipse 35px 6px at 75% 70%,
+      oklch(0.14 0.03 35 / 0.3),
+      transparent
+    );
+  background-size: 100% 100%, 100% 32px, 200px 200px, 300px 300px;
+  background-position: 0 0, 0 0, 0 0, 100px 50px;
+}
+
+.wood-grain-light {
+  background-image: 
+    /* Lighter wood grain for cards */
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 1px,
+      oklch(0.25 0.02 45 / 0.15) 1px,
+      oklch(0.25 0.02 45 / 0.15) 3px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      oklch(0.30 0.03 50 / 0.1) 0px,
+      oklch(0.35 0.03 40 / 0.05) 6px,
+      oklch(0.28 0.02 60 / 0.15) 12px
+    );
+  background-size: 100% 100%, 100% 24px;
+}
+
+.wood-grain-nav {
+  background-image: 
+    /* Subtle navigation wood texture */
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 1px,
+      oklch(0.20 0.02 45 / 0.1) 1px,
+      oklch(0.20 0.02 45 / 0.1) 2px
+    ),
+    linear-gradient(
+      180deg,
+      oklch(0.25 0.03 50 / 0.05) 0%,
+      oklch(0.22 0.02 40 / 0.08) 50%,
+      oklch(0.20 0.02 60 / 0.05) 100%
+    );
+  background-size: 100% 100%, 100% 16px;
+}
