@@ -276,7 +276,7 @@ function MenuPage() {
                   <div className="relative z-10">
                     <CardHeader>
                       <div className="flex justify-between items-start">
-                        <CardTitle className="text-xl font-semibold text-primary group-hover:text-accent transition-colors">
+                        <CardTitle className="text-xl font-semibold text-primary group-hover:text-red-500 transition-colors">
                           {item.name}
                         </CardTitle>
                         <div className="flex flex-col items-end gap-2">
