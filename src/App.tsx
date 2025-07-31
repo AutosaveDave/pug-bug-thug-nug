@@ -157,15 +157,43 @@ function HomePage({ setCurrentPage }: { setCurrentPage: (page: PageType) => void
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
           >
-            <Button 
-              size="lg" 
-              onClick={() => setCurrentPage('menu')}
-              className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 animate-pulse-glow hover-scale"
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <ChefHat size={24} className="mr-2" />
-              View Menu
-              <ArrowRight size={20} className="ml-2" />
-            </Button>
+              <Button 
+                size="lg" 
+                onClick={() => setCurrentPage('menu')}
+                className="bg-accent hover:bg-accent/80 text-accent-foreground text-lg px-8 py-6 animate-pulse-glow group relative overflow-hidden border-2 border-accent-foreground/20 hover:border-accent-foreground/40 shadow-2xl hover:shadow-accent/30 transition-all duration-300"
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-accent-foreground/10 to-transparent"
+                  initial={{ x: "-100%" }}
+                  animate={{ x: "100%" }}
+                  transition={{ 
+                    repeat: Infinity, 
+                    duration: 2.5, 
+                    ease: "linear",
+                    repeatDelay: 1
+                  }}
+                />
+                <motion.div
+                  whileHover={{ rotate: [0, -10, 10, 0] }}
+                  transition={{ duration: 0.5 }}
+                  className="flex items-center relative z-10"
+                >
+                  <ChefHat size={24} className="mr-2 group-hover:scale-110 transition-transform duration-300" />
+                  <span className="font-semibold group-hover:tracking-wide transition-all duration-300">View Menu</span>
+                  <motion.div
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <ArrowRight size={20} className="ml-2 group-hover:scale-125 transition-transform duration-300" />
+                  </motion.div>
+                </motion.div>
+              </Button>
+            </motion.div>
           </motion.div>
         </motion.div>
       </section>
