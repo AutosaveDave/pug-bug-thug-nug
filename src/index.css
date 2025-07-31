@@ -8,44 +8,44 @@
 }
 
 :root {
-  /* #D2B48C - Tan background for warmth */
-  --background: oklch(0.75 0.05 75);
-  /* #8B4513 - Saddle Brown foreground for strong contrast */
-  --foreground: oklch(0.35 0.08 45);
+  /* #F5F5DC - Beige background for warmth */
+  --background: oklch(0.95 0.03 85);
+  /* #362D28 - Dark brown foreground for strong contrast */
+  --foreground: oklch(0.22 0.03 40);
 
-  /* #F5F5DC - Beige card background for contrast against tan */
-  --card: oklch(0.95 0.03 85);
-  /* #8B4513 - Saddle Brown card text */
-  --card-foreground: oklch(0.35 0.08 45);
-  --popover: oklch(0.95 0.03 85);
-  --popover-foreground: oklch(0.35 0.08 45);
+  /* #FFFFFF - White card background for clean contrast */
+  --card: oklch(1 0 0);
+  /* #362D28 - Dark brown card text */
+  --card-foreground: oklch(0.22 0.03 40);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.03 40);
 
   /* #A52A2A - Brown primary for rich, premium feel */
   --primary: oklch(0.40 0.15 25);
-  /* #F5F5DC - Beige on primary for readability */
-  --primary-foreground: oklch(0.95 0.03 85);
-  /* #8B4513 - Saddle Brown secondary */
-  --secondary: oklch(0.35 0.08 45);
-  /* #F5F5DC - Beige on secondary */
-  --secondary-foreground: oklch(0.95 0.03 85);
-  /* #808080 - Gray muted for subtle backgrounds */
-  --muted: oklch(0.58 0.01 270);
-  /* #FFFFFF - White muted text for better contrast on gray */
-  --muted-foreground: oklch(1 0 0);
+  /* #FFFFFF - White on primary for contrast */
+  --primary-foreground: oklch(1 0 0);
+  /* #2C3E50 - Dark blue-gray secondary */
+  --secondary: oklch(0.30 0.04 250);
+  /* #FFFFFF - White on secondary */
+  --secondary-foreground: oklch(1 0 0);
+  /* #D2B48C - Tan muted for subtle backgrounds */
+  --muted: oklch(0.75 0.05 75);
+  /* #362D28 - Dark brown muted text */
+  --muted-foreground: oklch(0.22 0.03 40);
   /* #FFD700 - Gold accent for call-to-action elements */
   --accent: oklch(0.85 0.15 85);
-  /* #8B4513 - Saddle Brown on accent for contrast */
-  --accent-foreground: oklch(0.35 0.08 45);
+  /* #362D28 - Dark brown on accent for contrast */
+  --accent-foreground: oklch(0.22 0.03 40);
   /* #A52A2A - Brown destructive */
   --destructive: oklch(0.40 0.15 25);
   /* #FFFFFF - White on destructive */
   --destructive-foreground: oklch(1 0 0);
 
-  /* #8B4513 - Saddle Brown borders for definition */
-  --border: oklch(0.35 0.08 45);
-  --input: oklch(0.35 0.08 45);
-  /* #4169E1 - Royal Blue ring for focus states */
-  --ring: oklch(0.55 0.25 260);
+  /* #362D28 - Dark brown borders for definition */
+  --border: oklch(0.22 0.03 40);
+  --input: oklch(0.22 0.03 40);
+  /* #2C3E50 - Dark blue-gray ring for focus states */
+  --ring: oklch(0.30 0.04 250);
 
   --radius: 0.75rem;
 }
@@ -92,9 +92,9 @@
 .smoke-effect {
   background: linear-gradient(135deg, 
     oklch(0.40 0.15 25 / 0.9),  /* Rich Brown primary */
-    oklch(0.35 0.08 45 / 0.7),  /* Saddle Brown */
-    oklch(0.30 0.06 30 / 0.8),  /* Darker brown */
-    oklch(0.85 0.15 85 / 0.3)   /* Gold accent fade */
+    oklch(0.30 0.04 250 / 0.8), /* Dark blue-gray secondary */
+    oklch(0.22 0.03 40 / 0.9),  /* Dark brown foreground */
+    oklch(0.85 0.15 85 / 0.4)   /* Gold accent fade */
   );
 }
 
@@ -106,26 +106,26 @@
       90deg,
       transparent,
       transparent 2px,
-      oklch(0.30 0.06 45 / 0.3) 2px,  /* Lighter saddle brown */
-      oklch(0.30 0.06 45 / 0.3) 4px
+      oklch(0.25 0.04 35 / 0.3) 2px,  /* Dark brown grain */
+      oklch(0.25 0.04 35 / 0.3) 4px
     ),
     /* Secondary grain detail */
     repeating-linear-gradient(
       180deg,
-      oklch(0.32 0.07 50 / 0.2) 0px,  /* Saddle brown variations */
-      oklch(0.35 0.08 40 / 0.1) 8px,
-      oklch(0.28 0.06 60 / 0.3) 16px,
-      oklch(0.33 0.07 45 / 0.15) 24px
+      oklch(0.27 0.03 45 / 0.2) 0px,  /* Dark brown variations */
+      oklch(0.24 0.04 40 / 0.1) 8px,
+      oklch(0.28 0.03 50 / 0.3) 16px,
+      oklch(0.26 0.03 45 / 0.15) 24px
     ),
     /* Wood knot variations */
     radial-gradient(
       ellipse 40px 8px at 25% 30%,
-      oklch(0.25 0.08 30 / 0.4),  /* Darker saddle brown */
+      oklch(0.20 0.04 30 / 0.4),  /* Darker brown knots */
       transparent
     ),
     radial-gradient(
       ellipse 35px 6px at 75% 70%,
-      oklch(0.27 0.07 35 / 0.3),  /* Medium saddle brown */
+      oklch(0.22 0.03 35 / 0.3),  /* Medium dark brown */
       transparent
     );
   background-size: 100% 100%, 100% 32px, 200px 200px, 300px 300px;
@@ -139,14 +139,14 @@
       90deg,
       transparent,
       transparent 1px,
-      oklch(0.40 0.06 45 / 0.15) 1px,  /* Light saddle brown */
-      oklch(0.40 0.06 45 / 0.15) 3px
+      oklch(0.70 0.04 45 / 0.15) 1px,  /* Light tan grain */
+      oklch(0.70 0.04 45 / 0.15) 3px
     ),
     repeating-linear-gradient(
       180deg,
-      oklch(0.45 0.07 50 / 0.1) 0px,   /* Tan variations */
-      oklch(0.50 0.06 40 / 0.05) 6px,
-      oklch(0.42 0.06 60 / 0.15) 12px
+      oklch(0.72 0.05 50 / 0.1) 0px,   /* Tan variations */
+      oklch(0.75 0.04 40 / 0.05) 6px,
+      oklch(0.68 0.05 60 / 0.15) 12px
     );
   background-size: 100% 100%, 100% 24px;
 }
@@ -158,14 +158,87 @@
       90deg,
       transparent,
       transparent 1px,
-      oklch(0.38 0.06 45 / 0.1) 1px,   /* Very light saddle brown */
-      oklch(0.38 0.06 45 / 0.1) 2px
+      oklch(0.92 0.03 80 / 0.1) 1px,   /* Very light beige grain */
+      oklch(0.92 0.03 80 / 0.1) 2px
     ),
     linear-gradient(
       180deg,
-      oklch(0.40 0.07 50 / 0.05) 0%,   /* Gradient of saddle browns */
-      oklch(0.36 0.06 40 / 0.08) 50%,
-      oklch(0.34 0.06 60 / 0.05) 100%
+      oklch(0.94 0.03 85 / 0.05) 0%,   /* Gradient of beige tones */
+      oklch(0.93 0.03 80 / 0.08) 50%,
+      oklch(0.95 0.03 90 / 0.05) 100%
     );
-  background-size: 100% 100%, 100% 16px;
+/* Page transition animations */
+.page-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
+}
+
+/* Slide up animation for cards */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+.animate-delay-500 { animation-delay: 0.5s; }
+.animate-delay-600 { animation-delay: 0.6s; }
+
+/* Hero floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Hover scale effect */
+.hover-scale {
+  transition: transform 0.3s ease-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Button pulse animation */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.85 0.15 85 / 0.4); }
+  50% { box-shadow: 0 0 0 10px oklch(0.85 0.15 85 / 0); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
 }
