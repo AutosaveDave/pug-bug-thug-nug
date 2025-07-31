@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { MapPin, Clock, Star, Users, Phone, Instagram, ChefHat } from "@phosphor-icons/react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -175,7 +175,7 @@ function MenuPage() {
       exit="out"
       variants={pageTransition}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-secondary/40 wood-grain-texture"
+      className=\"min-h-screen bg-secondary/60 wood-grain-texture\"
     >
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
@@ -238,7 +238,7 @@ function MenuPage() {
             <p className="text-xl text-accent font-medium mb-2">
               First rule of Bite Club: Tell everyone
             </p>
-            <p className="text-lg text-primary-foreground">
+            <p className="text-lg text-white">
               Our exclusive rewards program for serious slider enthusiasts
             </p>
           </div>
@@ -448,9 +448,17 @@ function App() {
   }
 
   // Listen for custom navigation events
-  window.addEventListener('navigate', (e: any) => {
-    setCurrentPage(e.detail)
-  })
+  useEffect(() => {
+    const handleNavigate = (e: any) => {
+      setCurrentPage(e.detail)
+    }
+
+    window.addEventListener('navigate', handleNavigate)
+    
+    return () => {
+      window.removeEventListener('navigate', handleNavigate)
+    }
+  }, [])
 
   return (
     <div className="min-h-screen bg-background font-body">
